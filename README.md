@@ -1,2 +1,2 @@
-# Node Blog
-> A simple blog made in Node.js
+# Blog do código
+> Um blog simples em Node.js

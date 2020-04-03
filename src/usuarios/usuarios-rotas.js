@@ -4,10 +4,11 @@ const middlewaresAutenticacao = require('./middlewares-autenticacao');
 module.exports = app => {
   app
     .route('/usuario/login')
-    .post(
-      middlewaresAutenticacao.local,
-      usuariosControlador.login
-    );
+    .post(middlewaresAutenticacao.local, usuariosControlador.login);
+
+  app
+    .route('/usuario/logout')
+    .get(middlewaresAutenticacao.bearer, usuariosControlador.logout);
 
   app
     .route('/usuario')
@@ -16,8 +17,5 @@ module.exports = app => {
 
   app
     .route('/usuario/:id')
-    .delete(
-      middlewaresAutenticacao.bearer,
-      usuariosControlador.deleta
-    );
+    .delete(middlewaresAutenticacao.bearer, usuariosControlador.deleta);
 };

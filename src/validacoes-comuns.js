@@ -1,3 +1,5 @@
+const { InvalidArgumentError } = require('./erros');
+
 module.exports = {
   campoStringNaoNulo: (valor, nome) => {
     if (typeof valor !== 'string' || valor === 0)

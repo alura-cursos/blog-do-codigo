@@ -1,4 +1,5 @@
 const Post = require('./posts-modelo');
+const { InvalidArgumentError, InternalServerError } = require('../erros');
 
 module.exports = {
   adiciona: async (req, res) => {
